@@ -3,7 +3,8 @@ const morgan = require("morgan");
 const exphbs = require("express-handlebars");
 const app = express();
 const router = require("../routers/RouterIndex");
-const port = 8000;
+const PORT = process.env.PORT || 8000;
+
 const DELAY = 1000;
 
 //connect db
@@ -24,6 +25,6 @@ app.engine(
 app.set("view engine", "hbs");
 
 router(app);
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`);
 });

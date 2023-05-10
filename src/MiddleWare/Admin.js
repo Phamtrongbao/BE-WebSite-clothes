@@ -1,4 +1,4 @@
-const Admin = require("../models/AdminModels");
+const Admin = require("../../src/models/AdminModels");
 const jwt = require("jsonwebtoken");
 const AdminAuthenicate = (req, res, next) => {
   Admin.findOne({ Type: "Admin" })

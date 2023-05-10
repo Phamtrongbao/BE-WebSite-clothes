@@ -1,9 +1,9 @@
 const Brand = require("../models/Brand");
 
 
-class BrandControllers {
+
   //[GET] /Brand
-  GetBrand = async (req, res, next) => {
+ const GetBrand = async (req, res, next) => {
     Brand.find({})
       .then((course) => {
         console.log("cour", course);
@@ -19,7 +19,7 @@ class BrandControllers {
   };
 
   //[Get] /Brand/:id/Details
-  GetBrandDetails = async (req, res, next) => {
+ const GetBrandDetails = async (req, res, next) => {
     Brand.findById(req.params.id)
       .then((brand) => {
         res.status(200).send({
@@ -31,6 +31,9 @@ class BrandControllers {
         res.status(500).send(err);
       });
   };
-}
 
-module.exports = new BrandControllers();
+
+module.exports = {
+  GetBrand,
+  GetBrandDetails
+};
